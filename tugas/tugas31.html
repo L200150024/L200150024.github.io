@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SIG-Tugas 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Circle</h1>
+							<p class="major">
+								Gempa Bumi
+							</p>
+						</div>
+						<div class="image">
+							<div id="map" style="width:100%;height:100%;"></div>
+							<script> 
+  		function initMap() {
+  			map = new google.maps.Map(  			
+  				document.getElementById('map'), 
+  				{
+          			zoom: 2,
+                center: new google.maps.LatLng(2.8,-187.3),
+                mapTypeId: 'terrain'
+        		}
+        	);
+		    //import geojson
+        var script = document.createElement('script');
+        script.src = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+        // map.data adalah alternatif lain untuk memanipulasi Marker
+        map.data.setStyle(function(feature) {
+          //membaca besarnya gempa dalam variabel "mag"
+          var magnitude = feature.getProperty('mag');
+          return {
+            icon: getCircle(magnitude)
+          };
+        });
+
+      }  //end blok InitMap
+
+      function getCircle(magnitude) {
+
+        if (magnitude<5) {
+        return {
+          path: google.maps.SymbolPath.CIRCLE, //bentuk obyek
+          fillColor: 'yellow',  //warna pengisi
+          fillOpacity: .2,  //transparansi
+          scale: Math.pow(2, magnitude) / 2,  //diameter 
+          strokeColor: 'white', //warna garis tepi
+          strokeWeight: .5    //ketebalan garis tepi
+        }; } else { 
+        return {
+          path: google.maps.SymbolPath.CIRCLE, //bentuk obyek
+          fillColor: 'red',  //warna pengisi
+          fillOpacity: .2,  //transparansi
+          scale: Math.pow(2, magnitude) / 2,  //diameter 
+          strokeColor: 'white', //warna garis tepi
+          strokeWeight: .5    //ketebalan garis tepi
+        }; }
+      }
+
+      function eqfeed_callback(results) {
+        map.data.addGeoJson(results);
+      }
+
+
+  	</script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5wcvAsEwC7lkb4YzFPgUk5Dx5EGGYv20&callback=initMap">
+    </script>
+						</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

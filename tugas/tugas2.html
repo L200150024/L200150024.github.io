@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SIG-Tugas 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Marker Cluster</h1>
+							<p class="major">
+								Perguruan Tinggi di Solo-Raya
+							</p>
+						</div>
+						<div class="image">
+							<div id="map" style="width:100%;height:100%;"></div>
+							<script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat:  -7.683029, lng: 110.814733}
+        });
+
+        
+        var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+
+        
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+      	{lat: -7.5575146, lng: 110.8513863},
+        {lat: -7.55963, lng: 110.8567293},
+        {lat: -7.5580737, lng: 110.7350603},
+        {lat: -7.54438, lng: 110.834799},
+        {lat: -7.561761, lng: 110.849261},
+        {lat: -7.564719, lng: 110.799075},
+        {lat: -7.5537318, lng: 110.7772679},
+        {lat: -7.5859859, lng: 110.81854},
+        {lat: -7.5380402, lng: 110.8330564},
+        {lat: -7.5653401, lng: 110.7947447},
+        {lat: -7.541614, lng: 110.849162},
+        {lat: -7.5416041, lng: 110.8494718},
+        {lat: -7.605227, lng: 110.796365},
+        {lat: -7.5438858, lng: 110.8363223},
+        {lat: -7.5514153, lng: 110.8023731},
+        {lat: -7.5657189, lng: 110.8653411},
+        {lat: -7.5495056, lng: 110.7432986},
+        {lat: -7.5653401, lng: 110.7947447},
+        {lat: -7.5667147, lng: 110.867672},
+        {lat: -7.558544, lng: 110.769385},
+        {lat: -7.5666139, lng: 110.8239078},
+        {lat: -7.5198734, lng: 110.7475503},
+        {lat: -7.5407412, lng: 110.766687},
+        {lat: -7.5991752, lng: 110.805657},
+        {lat: -7.5518362, lng: 110.833712},
+        {lat: -7.567395, lng: 110.811818},
+        {lat: -7.567395, lng: 110.811818},
+        {lat: -7.5618298, lng: 110.8492956},
+        {lat: -7.5526088, lng: 110.7752618},
+        {lat: -7.56792, lng: 110.801445},
+        {lat: -7.572904, lng: 110.814622},
+        {lat: -7.534548, lng: 110.7727761},
+        {lat: -7.5613803, lng: 110.800092},
+        {lat: -7.5504847, lng: 110.8354442},
+        {lat: -7.5490861, lng: 110.8300044},
+        {lat: -7.5536537, lng: 110.7772598},
+        {lat: -7.5669298, lng: 110.7802991},
+        {lat: -7.5864559, lng: 110.8237622},
+        {lat: -7.544486, lng: 110.802644},
+        {lat: -7.5571259, lng: 110.8493547},
+        {lat: -7.561954, lng: 110.7914245},
+        {lat: -7.5340115, lng: 110.816165},
+        {lat: -7.5342675, lng: 110.8315},
+        {lat: -7.548879, lng: 110.786455},
+        {lat: -7.551945, lng: 110.833766},
+        {lat: -7.57816, lng: 110.8092},
+        {lat: -7.566881, lng: 110.799081},
+        {lat: -7.5438447, lng: 110.8328993},
+        {lat: -7.5162042, lng: 110.5895162},
+        {lat: -7.5638146, lng: 110.7945698},
+        {lat: -7.5585223, lng: 110.8309026},
+        {lat: -7.5578622, lng: 110.7718206},
+        {lat: -7.5701001, lng: 110.8057171},
+        {lat: -7.5487646, lng: 110.7863079},
+        {lat: -7.5459238, lng: 110.8361468},
+        {lat: -7.5407658, lng: 110.8224741},
+        {lat: -7.565576, lng: 110.864507},
+        {lat: -7.5511761, lng: 110.8335702},
+        {lat: -7.5816081, lng: 110.9040307},
+        {lat: -7.545328, lng: 110.835757}        
+      ]
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5wcvAsEwC7lkb4YzFPgUk5Dx5EGGYv20&callback=initMap">
+    </script>
+						</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

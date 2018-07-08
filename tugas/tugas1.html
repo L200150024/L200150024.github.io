@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SIG-Tugas 1</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>Lokasi Rumah</h1>
+							<p class="major">
+								Alamat : Jl Raya Gringging 103 Cerme, Grogol, Kediri, Jawa Timur
+							</p>
+						</div>
+						<div class="image">
+							<div id="map" style="width:100%;height:100%;"></div>
+							<script>
+								  function initMap() {
+									var kampusfki = {lat: -7.5567249, lng: 110.771014};
+									var rumahkediri = {lat: -7.7451679, lng: 111.9643769}
+
+									var map = new google.maps.Map(document.getElementById('map'), {
+									  zoom: 19,
+									  center: rumahkediri
+									});
+
+									var marker = new google.maps.Marker({
+									  position: rumahkediri,
+									  map: map,
+									  title: 'Jl Raya Gringging 103, Cerme, Grogol, Kediri'
+									});
+								  }
+							</script>
+							<script async defer
+								src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5wcvAsEwC7lkb4YzFPgUk5Dx5EGGYv20&callback=initMap">
+							</script>
+						</div>
+					</section>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
